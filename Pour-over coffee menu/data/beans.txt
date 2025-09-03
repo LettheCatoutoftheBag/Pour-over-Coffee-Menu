@@ -1,8 +1,0 @@
-id,name_zh,name_en,origin,region,process,roast,category,flavor_tags_zh,flavor_tags_en,taste,is_featured,is_sold_out
-ETH-2025-01,"依索比亞 耶加雪菲","Ethiopia Yirgacheffe",Africa - Ethiopia,Yirgacheffe,Washed,Light,estate,"柑橘|白花|蜂蜜","Citrus|White flower|Honey","茶感清亮、柑橘酸質、乾淨\n尾韻\n\nTea-like clarity, citrus acidity,\nclean finish",true,false
-PAN-2025-01,"巴拿馬 波奎特 瑰夏","Panama Boquete Geisha",Central America - Panama,Boquete,Washed,Light,geisha,"白花|柑橘|桃子","White flower|Citrus|Peach","細緻茶感、蜜桃甜香\n\nDelicate tea-like, peach sweetness",true,false
-PAN-2025-02,"巴拿馬 瑰夏 日曬","Panama Geisha Natural",Central America - Panama,Volcan,Natural,Light,geisha,"熱帶水果|莓果|發酵調","Tropical|Berry|Fermented notes","多汁奔放、發酵層次\n\nJuicy, expressive, fermented layers",false,false
-GUA-2025-COE,"瓜地馬拉 安提瓜 COE#7","Guatemala Antigua COE #7",Central America - Guatemala,Antigua,Washed,Medium,competition,"可可|堅果|太妃","Cocoa|Nutty|Toffee","均衡厚實、乾淨甜感\n\nBalanced body, clean sweetness",false,true
-COL-2025-01,"哥倫比亞 薇拉","Colombia Huila",South America - Colombia,Huila,Honey,Light-Medium,estate,"莓果|焦糖|核果","Berry|Caramel|Nutty","酸甜平衡、滑順口感\n\nBalanced acidity and sweetness, smooth",false,false
-BRA-2025-01,"巴西 黃波旁","Brazil Yellow Bourbon",South America - Brazil,Cerrado,Natural,Medium,estate,"榛果|可可|焦糖","Hazelnut|Cocoa|Caramel","厚實滑順\n\nFull and smooth",false,false
-TWN-2025-COE,"台灣 阿里山 COE 入選","Taiwan Alishan COE Selected",Asia - Taiwan,Alishan,Washed,Light-Medium,competition,"花香|茶感|蜜香","Floral|Tea-like|Honeyed","清亮細緻、甜感回韻\n\nClear and delicate, sweet finish",false,false
