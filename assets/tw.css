@@ -1,0 +1,139 @@
+/*============================================================
+File: assets/tw.css (v2.0 - 根據新需求全面更新)
+============================================================*/
+/* Reset & base */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased}
+img,svg,video,canvas{display:block;max-width:100%}
+input,button,select,textarea{font:inherit}
+:root{
+  --slate-900:#0f172a;--slate-800:#1e293b;--slate-700:#334155;--slate-600:#475569;--slate-500:#64748b;--slate-400:#94a3b8;--slate-300:#cbd5e1;--slate-200:#e2e8f0;--slate-100:#f1f5f9;--slate-50:#f8fafc;
+  --amber-600:#d97706;--green-600:#16a34a;--red-600:#dc2626;--white:#fff;--black:#000;
+  --radius-xl:1rem;--radius-2xl:1.25rem;--shadow:0 10px 20px rgba(0,0,0,.06),0 2px 6px rgba(0,0,0,.06)
+}
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.bg-slate-50{background-color:var(--slate-50)}
+.bg-slate-100\/95{background-color:rgba(241,245,249,.95)}
+.bg-slate-200{background-color:var(--slate-200)}
+.text-slate-800{color:var(--slate-800)}
+.text-slate-700{color:var(--slate-700)}
+.text-slate-500{color:var(--slate-500)}
+.text-slate-400{color:var(--slate-400)}
+.text-xs{font-size:.75rem}
+.text-sm{font-size:.875rem}
+.text-base{font-size:1rem}
+.text-lg{font-size:1.125rem}
+.text-xl{font-size:1.25rem}
+.text-2xl{font-size:1.5rem}
+.text-3xl{font-size:1.875rem}
+.font-bold{font-weight:700}
+.font-semibold{font-weight:600}
+.tracking-tight{letter-spacing:-.01em}
+.container{max-width:64rem}
+.mx-auto{margin-left:auto;margin-right:auto}
+.p-0{padding:0}
+.p-4{padding:1rem}
+.p-6{padding:1.5rem}
+.p-8{padding:2rem}
+.pt-0{padding-top:0}
+.px-2{padding-left:.5rem;padding-right:.5rem}
+.py-1{padding-top:.25rem;padding-bottom:.25rem}
+.mb-1{margin-bottom:.25rem}
+.mb-2{margin-bottom:.5rem}
+.mb-4{margin-bottom:1rem}
+.mb-6{margin-bottom:1.5rem}
+.mt-1{margin-top:.25rem}
+.mt-2{margin-top:.5rem}
+.mt-8{margin-top:2rem}
+.ml-2{margin-left:.5rem}
+.ml-4{margin-left:1rem}
+.gap-1{gap:.25rem}
+.gap-2{gap:.5rem}
+.gap-3{gap:.75rem}
+.gap-4{gap:1rem}
+.w-full{width:100%}
+.max-w-sm{max-width:24rem}
+.rounded-xl{border-radius:var(--radius-xl)}
+.rounded-2xl{border-radius:var(--radius-2xl)}
+.rounded-full{border-radius:9999px}
+.shadow{box-shadow:var(--shadow)}
+.border{border:1px solid var(--slate-200)}
+.card{background-color:rgba(255,255,255,.92);backdrop-filter:saturate(120%) blur(4px);border-radius:var(--radius-2xl);box-shadow:var(--shadow);border:1px solid var(--slate-200)}
+.input{width:100%;padding:.625rem .75rem;border:1px solid var(--slate-300);border-radius:.75rem;background:#fff}
+.btn{width:100%;display:inline-block;text-align:center;padding:.625rem .75rem;border-radius:.75rem;border:1px solid var(--slate-300);background:#fff}
+.btn:hover{background:var(--slate-100)}
+.chip{font-size:.75rem;padding:.25rem .5rem;border-radius:999px;background:var(--slate-100);border:1px solid var(--slate-300)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.grid{display:grid}
+.flex{display:flex}
+.flex-1{flex:1 1 0%}
+.flex-wrap{flex-wrap:wrap}
+.flex-none{flex:none}
+.items-center{align-items:center}
+.items-start{align-items:flex-start}
+.items-baseline{align-items:baseline}
+.self-end{align-self:flex-end}
+.self-center{align-self:center}
+.justify-between{justify-content:space-between}
+.text-center{text-align:center}
+.min-h-screen{min-height:100vh}
+.hidden{display:none}
+.relative{position:relative}
+.absolute{position:absolute}
+.top-4{top:1rem}
+.right-4{right:1rem}
+.inset-0{top:0;right:0;bottom:0;left:0}
+.place-items-center{place-items:center}
+.backdrop-blur-sm{backdrop-filter:blur(4px)}
+.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.duration-200{transition-duration:.2s}
+.leading-relaxed{line-height:1.625}
+.min-w-0{min-width:0}
+
+/* 卡片內部細節 */
+.card .title{font-weight:700;font-size:1rem}
+.card .meta{font-size:.8125rem;color:var(--slate-600)}
+.tag{display:inline-block;font-size:.6875rem;border:1px solid var(--slate-300);padding:.125rem .5rem;border-radius:999px;margin-right:.25rem;margin-bottom:.25rem}
+
+/* 【需求 1】: 推薦商品樣式 */
+.card.featured {
+  border-color: #fde047; /* 黃色邊框 */
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.5); /* 黃色外光暈 */
+}
+.featured-star {
+  margin-right: 0.5rem;
+  color: #facc15; /* 星星顏色 */
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3)); /* 星星立體感陰影 */
+}
+
+/* details/summary 無障礙與樣式 */
+details{border:1px solid var(--slate-200);border-radius:1rem;background:#fff; transition: all 0.2s ease;}
+summary{list-style:none;cursor:pointer;padding:1rem}
+summary::-webkit-details-marker{display:none}
+.chev{transition:transform .2s ease}
+details[open] .chev{transform:rotate(90deg)}
+.content{padding:0 1rem 1rem}
+
+/* 可選的簡單焦點樣式 */
+:focus-visible{outline:2px solid var(--amber-600);outline-offset:2px}
+
+/* 分類頁籤 */
+.tabs{display:flex;gap:.5rem;border-bottom:1px solid var(--slate-200);padding-bottom:.5rem;margin-bottom:.75rem;flex-wrap:wrap}
+.tab{padding:.5rem .75rem;border:1px solid var(--slate-300);border-radius:.5rem;background:#fff; transition: all 0.2s ease;}
+.tab[aria-selected="true"]{background:var(--slate-100);border-color:var(--slate-600);font-weight:600}
+
+/* 【需求 4】: 焙度標籤顏色 */
+.roast-badge {
+  color: var(--slate-800); /* 預設文字顏色，確保可讀性 */
+}
+.roast-badge.light { background-color: #fef3c7; border: 1px solid #fde68a; } /* 莫蘭迪黃 */
+.roast-badge.lightmedium { background-color: #ffedd5; border: 1px solid #fed7aa; } /* 莫蘭迪橘黃 */
+.roast-badge.medium { background-color: #fed7aa; border: 1px solid #fb923c; } /* 莫蘭迪橘 */
+.roast-badge.mediumdark { background-color: #dcfce7; border: 1px solid #86efac; } /* 莫蘭迪綠 */
+.roast-badge.dark { background-color: #eaddd7; border: 1px solid #d4c4b8; } /* 莫蘭迪棕 */
+
+
+@media(min-width:640px){.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:768px){.md\:p-6{padding:1.5rem}}
+@media(min-width:1024px){.lg\:p-8{padding:2rem}}
