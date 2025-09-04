@@ -66,7 +66,7 @@ const UI = {
     subtitle: '1. 莊園級咖啡 $150，競賽級咖啡 $200，瑰夏 Geisha $300，限量版價格請至櫃檯詢問。\n2. 手沖比率皆為 1 : 16，若有濃淡度需求請於點餐時告知。',
     search_placeholder: '搜尋：品名、產區、風味、焙度…',
     tabs: { all: '全部', estate: '莊園級咖啡', competition: '競賽級咖啡', geisha: '瑰夏 Geisha', limited: '限量版' },
-    badge: { featured: '本日推薦' }, // 'soldout' 已不再需要，因為售完商品會被隱藏
+    badge: { featured: '本日推薦' },
     empty: '沒有符合的品項。',
     gate_title: '選擇語言 / Choose Language',
     gate_note: '此偏好會儲存在本機裝置，可隨時更改。',
@@ -124,7 +124,6 @@ const UI = {
  */
 const ROAST_TRANSLATIONS = {
   'Light': '淺',
-  'Light-Medium': '淺中',
   'Medium': '中',
   'Medium-Dark': '中深',
   'Dark': '深'
