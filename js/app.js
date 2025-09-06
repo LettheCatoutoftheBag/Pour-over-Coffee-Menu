@@ -175,17 +175,17 @@ function renderList(items) {
           <div class="text-slate-400 text-2xl transition-transform duration-200 chev">▶</div>
         </div>
       </summary>
-//      <div class="content p-4 pt-0 text-sm">
-//        <div class="grid gap-3">
-//          <div class="leading-relaxed"><strong>風味 / Taste:</strong><br>${tasteTextHTML}</div>
-//          <div class="border-t border-slate-200 pt-3 grid grid-cols-2 gap-2 text-xs">
-//            <div><strong class="text-slate-600 block">產區 / Origin</strong><span>${it.origin || 'N/A'}</span></div>
-//            <div><strong class="text-slate-600 block">處理法 / Process</strong><span>${it.process || 'N/A'}</span></div>
-//            <div><strong class="text-slate-600 block">品種 / Variety</strong><span>${it.variety || 'N/A'}</span></div>
-//            <div><strong class="text-slate-600 block">海拔 / Altitude</strong><span>${it.altitude || 'N/A'}</span></div>
-//          </div>
-//        </div>
-//      </div>`;
+      <div class="content p-4 pt-0 text-sm">
+        <div class="grid gap-3">
+          <div class="leading-relaxed"><strong>風味 / Taste:</strong><br>${tasteTextHTML}</div>
+          <div class="border-t border-slate-200 pt-3 grid grid-cols-2 gap-2 text-xs">
+            <div><strong class="text-slate-600 block">產區 / Origin</strong><span>${it.origin || 'N/A'}</span></div>
+            <div><strong class="text-slate-600 block">處理法 / Process</strong><span>${it.process || 'N/A'}</span></div>
+            <div><strong class="text-slate-600 block">品種 / Variety</strong><span>${it.variety || 'N/A'}</span></div>
+            <div><strong class="text-slate-600 block">海拔 / Altitude</strong><span>${it.altitude || 'N/A'}</span></div>
+          </div>
+        </div>
+      </div>`;
     list.appendChild(details);
   }
 }

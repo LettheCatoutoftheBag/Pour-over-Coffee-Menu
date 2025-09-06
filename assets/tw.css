@@ -268,3 +268,19 @@ details[open] .chev { transform: rotate(90deg); }
     margin: 0 auto;   /* 水平置中 */
   }
 }
+/* --- 暫時隱藏卡片展開功能 START --- */
+
+/* 1. 隱藏箭頭圖示 */
+/* 針對 class 為 .chev 的元素，將其完全隱藏不顯示。 */
+.chev {
+  display: none;
+}
+
+/* 2. 移除 summary 區域的點擊功能 */
+/* 讓 summary 標籤無法觸發滑鼠事件，這樣使用者就點不開了。 */
+/* 這也會一併移除滑鼠移上去時變成手指的指標樣式。 */
+summary {
+  pointer-events: none;
+}
+
+/* --- 暫時隱藏卡片展開功能 END --- */
