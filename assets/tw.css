@@ -7,7 +7,6 @@ File: assets/tw.css (v4.3 - 語言選擇按鈕寬度優化)
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
 
 /* --- 區塊：CSS 變數定義 (:root) --- */
-/* 目的：集中管理設計系統中的核心元素，如顏色、字體、圓角、陰影，方便全站風格的統一修改。 */
 :root {
   /* 規則：品牌色彩系統 */
   --color-brand-green: #85a817;
@@ -28,7 +27,6 @@ File: assets/tw.css (v4.3 - 語言選擇按鈕寬度優化)
 }
 
 /* --- 區塊：基礎與重置樣式 --- */
-/* 目的：清除瀏覽器預設樣式，並設定全站通用的基礎規則。 */
 *,
 *::before,
 *::after {
@@ -36,7 +34,7 @@ File: assets/tw.css (v4.3 - 語言選擇按鈕寬度優化)
 }
 
 html {
-  font-size: 18px; /* 設定基準字體大小，強化手機端閱讀性 */
+  font-size: 18px;
 }
 
 body {
@@ -55,8 +53,6 @@ body {
   padding: 1rem;
 }
 
-/* 元件：卡片 (.card) */
-/* 規則：設定卡片的背景、圓角、陰影和邊框，是網站中最主要的容器樣式。 */
 .card {
   background-color: var(--color-surface);
   border-radius: var(--radius);
@@ -68,13 +64,11 @@ body {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lifted);
 }
-/* 規則：推薦商品的特殊樣式，使用金色邊框與光暈。 */
 .card.featured {
   border-color: var(--color-accent-gold);
   box-shadow: 0 0 12px rgba(199, 167, 127, 0.4);
 }
 
-/* 元件：按鈕 (.btn), 輸入框 (.input), 頁籤 (.tab) */
 .btn,
 .input,
 .tab,
@@ -102,7 +96,6 @@ body {
 
 /* --- 區塊：頁面特定元件樣式 --- */
 
-/* 區塊：頁首 (header) */
 header h1 {
   font-weight: 700;
   font-size: 1.75rem;
@@ -113,15 +106,13 @@ header p {
   font-size: 1rem;
 }
 
-/* 區塊：語言選擇彈窗 (#langGate) */
 #langGate .card {
   padding: 1.5rem;
 }
-/* 調整規則：讓按鈕組的容器在行動版預設為全寬，在寬螢幕時限制最大寬度並置中。 */
 #langGate .grid {
   display: grid;
   gap: 0.75rem;
-  width: 100%; /* 行動版預設全寬 */
+  width: 100%;
 }
 #langGate h1 {
   color: var(--color-text-primary);
@@ -135,8 +126,6 @@ header p {
   font-weight: 500;
 }
 
-/* 區塊：分類頁籤 (.tabs) */
-/* 規則：使用 flex 佈局讓頁籤水平排列，並設定底部邊框。 */
 .tabs {
   display: flex;
   gap: 0.75rem;
@@ -157,7 +146,6 @@ header p {
   color: var(--color-text-primary);
   border-color: var(--color-text-primary);
 }
-/* 規則：利用 [aria-selected="true"] 屬性選擇器來設定 "選中狀態" 的頁籤樣式。 */
 .tab[aria-selected="true"] {
   background-color: var(--color-brand-green);
   color: white;
@@ -168,14 +156,11 @@ header p {
   border-color: #729413;
 }
 
-/* 區塊：咖啡豆卡片列表 (#list) */
 #list {
   display: grid;
   gap: 1rem;
 }
 
-/* 區塊：卡片標題 RWD 佈局 (.card-header) */
-/* 調整規則 (手機版/預設)：預設為上下佈局。使用 flexbox 並設定 direction 為 column。 */
 .card-header {
   display: flex;
   flex-direction: column;
@@ -184,11 +169,12 @@ header p {
   margin-bottom: 0.5rem;
 }
 
-/* 區塊：咖啡豆卡片內部細節 */
 details.card {
   overflow: hidden;
 }
 summary {
+  position: relative;
+  overflow: hidden;
   list-style: none;
   cursor: pointer;
   padding: 1rem;
@@ -212,7 +198,6 @@ summary::-webkit-details-marker {
   margin-right: 0.5rem;
   display: inline-block;
 }
-/* 規則：焙度標籤的基礎樣式，具體顏色由下面的修飾符 class 決定。 */
 .roast-badge {
   padding: 0.2rem 0.75rem;
   font-size: 0.85rem;
@@ -222,7 +207,6 @@ summary::-webkit-details-marker {
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-/* 規則：為不同焙度等級的標籤設定各自的背景顏色。 */
 .light,
 .lightmedium {
   background-color: #ffc629;
@@ -237,7 +221,6 @@ summary::-webkit-details-marker {
   background-color: #503629;
 }
 
-/* 規則：風味小標籤的樣式。 */
 .tag {
   display: inline-block;
   font-size: 0.85rem;
@@ -248,8 +231,8 @@ summary::-webkit-details-marker {
   color: var(--color-text-secondary);
 }
 
-/* 規則：卡片展開後的內容區域樣式。 */
 .content {
+  display: none;
   padding: 0 1rem 1rem;
   font-size: 1rem;
   color: var(--color-text-secondary);
@@ -257,13 +240,48 @@ summary::-webkit-details-marker {
 .content strong {
   color: var(--color-text-primary);
 }
-/* 規則：控制箭頭圖示的旋轉動畫。 */
 .chev {
   transition: transform 0.2s ease;
 }
 details[open] .chev {
   transform: rotate(90deg);
 }
+
+.price-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  padding: 0 1.5rem;
+  font-weight: 700;
+  font-size: 1.75rem;
+  white-space: nowrap;
+  border-left: 1px solid var(--color-border);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+details[open] .price-overlay {
+  transform: translateX(0%);
+}
+
+/* START: 新增的條件式互動樣式 */
+/* 規則：當卡片具有 .no-price class 時，代表它沒有價格，應禁用互動 */
+.no-price summary {
+  pointer-events: none; /* 讓 summary 標籤無法觸發滑鼠事件 */
+  cursor: default; /* 將滑鼠指標變回預設箭頭 */
+}
+.no-price .chev {
+  display: none; /* 隱藏箭頭圖示 */
+}
+/* END: 新增的條件式互動樣式 */
 
 /* --- 區塊：輔助/通用 class --- */
 .flex {
@@ -336,13 +354,11 @@ details[open] .chev {
   區塊：響應式設計 (RWD Optimizations)
 ============================================================*/
 
-/* 規則：min-width: 768px 指的是「當螢幕寬度大於等於 768px 時」套用此樣式。主要用於平板及桌面裝置。 */
 @media (min-width: 768px) {
   .container {
     padding: 1.5rem;
   }
 
-  /* 調整規則 (電腦版)：將卡片標題 (.card-header) 改為左右佈局。 */
   .card-header {
     flex-direction: row;
     justify-content: space-between;
@@ -351,28 +367,27 @@ details[open] .chev {
   }
 
   .roast-badge {
-    flex-shrink: 0; /* 防止焙度標籤在高密度文字下被壓縮變形 */
+    flex-shrink: 0;
   }
 
-  /* 調整規則 (電腦版)：將語言選擇按鈕組的寬度限制，並置中。 */
   #langGate .grid {
-    max-width: 18rem; /* 限制語言按鈕組的最大寬度 */
-    margin: 0 auto; /* 水平置中 */
+    max-width: 18rem;
+    margin: 0 auto;
   }
 }
-/* --- 暫時隱藏卡片展開功能 START --- */
 
-/* 1. 隱藏箭頭圖示 */
-/* 針對 class 為 .chev 的元素，將其完全隱藏不顯示。 */
+/* START: 依照您的要求，將原功能改為註解保留 */
+/*
+--- 暫時隱藏卡片展開功能 START ---
+
 .chev {
   display: none;
 }
 
-/* 2. 移除 summary 區域的點擊功能 */
-/* 讓 summary 標籤無法觸發滑鼠事件，這樣使用者就點不開了。 */
-/* 這也會一併移除滑鼠移上去時變成手指的指標樣式。 */
 summary {
   pointer-events: none;
 }
 
-/* --- 暫時隱藏卡片展開功能 END --- */
+--- 暫時隱藏卡片展開功能 END ---
+*/
+/* END: 依照您的要求，將原功能改為註解保留 */

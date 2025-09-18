@@ -230,7 +230,6 @@ function renderList(items) {
   }
 
   // --- 區塊：迴圈生成卡片 ---
-  // 規則：遍歷每一個咖啡豆項目，為其生成一個 <details> 卡片元素。
   for (const it of items) {
     // --- 子區塊：資料準備 ---
     const featured = (it.is_featured || "").toLowerCase() === "true";
@@ -246,21 +245,22 @@ function renderList(items) {
       : "";
     const roastClass = (it.roast || "").toLowerCase().replace("-", "");
 
-    // START: 新增的價格處理邏輯
-    // 只有當 'it.price' 存在且不為空值時，才建立價格的 HTML 字串。
-    // 否則，priceHTML 會是一個空字串，該元素將不會被渲染。
-    const priceHTML = it.price
-      ? `<div class="text-2xl font-semibold text-slate-800">$${it.price}</div>`
+    const priceOverlayHTML = it.price
+      ? `<div class="price-overlay">$${it.price}</div>`
       : "";
-    // END: 新增的價格處理邏輯
+
+    // START: 新增的互動邏輯
+    // 如果品項沒有價格，就賦予 'no-price' class，稍後用 CSS 來禁用互動
+    const cardInteractionClass = it.price ? "" : "no-price";
+    // END: 新增的互動邏輯
 
     const details = document.createElement("details");
-    details.className = `card ${featured ? "featured" : ""}`;
+    // 將互動 class 加入到 details 元素上
+    details.className = `card ${
+      featured ? "featured" : ""
+    } ${cardInteractionClass}`;
 
     // --- 子區塊：卡片 HTML 結構 ---
-    // 規則：此處定義了單張咖啡豆卡片的 HTML 結構。
-    // RWD 調整規則：內部的 .card-header 容器是為了實現 RWD 佈局的關鍵，
-    // 透過 CSS 控制其在手機上為上下排列，在電腦上為左右排列。
     details.innerHTML = `
       <summary class="flex items-center justify-between p-4 cursor-pointer">
         <div class="flex-1 min-w-0">
@@ -273,13 +273,8 @@ function renderList(items) {
               </h3>
               <p class="meta">${it.name_en}</p>
             </div>
-            
-            <div class="text-right flex-shrink-0 ml-4">
-              ${priceHTML} <div class="roast-badge ${roastClass} ${
-      priceHTML ? "mt-1" : ""
-    }">${roastText}</div>
-            </div>
-            </div>
+            <div class="roast-badge ${roastClass}">${roastText}</div>
+          </div>
 
           <div class="mt-2 flex flex-wrap gap-1 tag-container">
             ${flavorTags
@@ -290,6 +285,9 @@ function renderList(items) {
         <div class="ml-4 flex-none self-center">
           <div class="text-slate-400 text-2xl transition-transform duration-200 chev">▶</div>
         </div>
+
+        ${priceOverlayHTML}
+
       </summary>
       <div class="content p-4 pt-0 text-sm">
         <div class="grid gap-3">
@@ -298,7 +296,6 @@ function renderList(items) {
             <div><strong class="text-slate-600 block">產區 / Origin</strong><span>${
               it.origin || "N/A"
             }</span></div>
-            
             <div><strong class="text-slate-600 block">品種 / Variety</strong><span>${
               it.variety || "N/A"
             }</span></div>
@@ -335,8 +332,6 @@ function applyFilterAndRender() {
   // 規則 3：如果搜尋框有內容，則根據關鍵字進行模糊搜尋。
   if (q) {
     filteredItems = filteredItems.filter((it) => {
-      // START: 修改的搜尋欄位
-      // 將 it.process 替換為 it.price，讓搜尋功能也能涵蓋價格
       const hay = [
         it.name_zh,
         it.name_en,
@@ -351,7 +346,6 @@ function applyFilterAndRender() {
       ]
         .join(" ")
         .toLowerCase();
-      // END: 修改的搜尋欄位
       return hay.includes(q);
     });
   }
